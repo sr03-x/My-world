@@ -37,9 +37,33 @@
             border: none;
             border-radius: 5px;
         }
-    </style>
+    <style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
+
+/* your existing styles here, like header, nav, sections, etc. */
+
+/* Add this at the END for button animation */
+.animate {
+  padding: 10px 20px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.animate:hover {
+  transform: scale(1.2);
+  background: #0ea5e9;
+}
+</style>
 </head>
-<body>
+<body><button class="animate" onclick="hello()">Click Me</button>
 
 <nav>
     <a href="#">Home</a>
@@ -52,7 +76,7 @@
     <img src="IMG_20260318_133429.jpg" width="150" style="border-radius:50%;">
     <img src="myphoto.jpg" width="150" style="border-radius:50%;">
     <p>I am learning web development 🚀</p>
-    <button onclick="hello()">Click Me</button>
+    <<button class="animate" onclick="hello()">Click Me</button>
 </header>
 
 <section>
