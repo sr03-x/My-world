@@ -1,13 +1,10 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html>
-    <section>
-    <h2>My Journey 🚀</h2>
-    <p>I started learning how to build websites and this is my first project. I will improve it step by step.</p>
-</section>
+
 <head>
-    <title>My World</title>
+    <title>SR World</title>
+
     <style>
-        /* General Body */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -16,7 +13,6 @@
             text-align: center;
         }
 
-        /* Navbar */
         nav {
             background: white;
             padding: 15px;
@@ -34,7 +30,6 @@
             color: #0095f6;
         }
 
-        /* Header */
         header {
             padding: 50px 20px;
         }
@@ -45,19 +40,15 @@
         }
 
         header p {
-            color: #262626;
             font-size: 18px;
-            margin: 10px 0 20px 0;
         }
 
         header img {
             border-radius: 50%;
             width: 150px;
-            margin: 10px;
             border: 3px solid #0095f6;
         }
 
-        /* Section cards */
         section {
             background: white;
             margin: 20px auto;
@@ -72,16 +63,26 @@
             transform: scale(1.03);
         }
 
-        section h2 {
-            color: #0095f6;
-            margin-bottom: 10px;
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
-        section p {
-            color: #262626;
+        .card {
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            border-radius: 10px;
         }
 
-        /* Buttons */
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .animate {
             padding: 10px 20px;
             background: #0095f6;
@@ -89,25 +90,17 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.3s, background 0.3s;
+            transition: transform 0.3s;
         }
 
         .animate:hover {
-            background: #0073cc;
             transform: scale(1.1);
-        }
-
-        /* Footer links if needed */
-        a {
-            color: #0095f6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+            background: #0073cc;
         }
 
     </style>
 </head>
+
 <body>
 
 <!-- Navbar -->
@@ -119,18 +112,35 @@
 
 <!-- Header -->
 <header>
-    <img src="IMG_20260318_133429.jpg" alt="Profile Photo">
-    <h1>Hi, I am SR 👋</h1>
+    <img src="IMG_20260318_133429.jpg">
+    <h1>Welcome to SR World 🌍</h1>
     <p>I am learning web development 🚀</p>
     <button class="animate" onclick="hello()">Click Me</button>
 </header>
 
-<!-- About Me Section -->
+<!-- About -->
 <section>
     <h2>About Me</h2>
     <p>This is my personal website. I will build amazing things here.</p>
 </section>
 
+<!-- My Journey -->
+<section>
+    <h2>My Journey 🚀</h2>
+    <p>I started learning how to build websites and this is my first project. I will improve it step by step.</p>
+</section>
+
+<!-- Photos -->
+<section>
+    <h2>My Photos 📸</h2>
+    <div class="gallery">
+        <div class="card"><img src="IMG_20260318_133429.jpg"></div>
+        <div class="card"><img src="IMG_20260318_133429.jpg"></div>
+        <div class="card"><img src="IMG_20260318_133429.jpg"></div>
+    </div>
+</section>
+
+<!-- Script -->
 <script>
 function hello() {
     alert("Welcome to my website 😎");
