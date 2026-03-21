@@ -12,7 +12,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #fafafa;
+            background: linear-gradient(to right, #e3f2fd, #ffffff);
             color: #262626;
             text-align: center;
         }
@@ -21,6 +21,8 @@
             background: white;
             padding: 15px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
         }
 
         nav a {
@@ -35,12 +37,12 @@
         }
 
         header {
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
         header h1 {
             color: #0095f6;
-            font-size: 36px;
+            font-size: 38px;
         }
 
         header p {
@@ -55,16 +57,16 @@
 
         section {
             background: white;
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 600px;
+            margin: 25px auto;
+            padding: 25px;
+            max-width: 700px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             transition: transform 0.3s;
         }
 
         section:hover {
-            transform: scale(1.03);
+            transform: translateY(-5px);
         }
 
         .gallery {
@@ -92,20 +94,28 @@
             transform: scale(1.2);
         }
 
-        .animate {
-            padding: 10px 20px;
+        .btn {
+            padding: 12px 25px;
             background: #0095f6;
             color: white;
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: 0.3s;
+            margin-top: 10px;
         }
 
-        .animate:hover {
+        .btn:hover {
             transform: scale(1.1);
             background: #0073cc;
             box-shadow: 0 0 15px #0095f6;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: #0095f6;
+            color: white;
         }
 
     </style>
@@ -116,28 +126,42 @@
 <!-- Navbar -->
 <nav>
     <a href="#">Home</a>
-    <a href="about.html">About</a>
-    <a href="#">Contact</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
 </nav>
 
 <!-- Header -->
 <header>
     <img src="IMG_20260318_133429.jpg">
     <h1>Welcome to SR World 🌍</h1>
-    <p>I am learning web development 🚀</p>
-    <button class="animate" onclick="hello()">Click Me</button>
+    <p>Hi, I’m Sahil 👋 | Learning Web & App Development 🚀</p>
+    <button class="btn" onclick="openChat()">Open Chat App 💬</button>
 </header>
 
 <!-- About -->
-<section>
+<section id="about">
     <h2>About Me</h2>
-    <p>This is my personal website. I will build amazing things here.</p>
+    <p>
+        Hi, I’m Sahil 👋 <br>
+        I’m learning web and app development.  
+        My goal is to build powerful apps like WhatsApp and real-world projects.
+    </p>
 </section>
 
 <!-- My Journey -->
 <section>
     <h2>My Journey 🚀</h2>
-    <p>I started learning how to build websites and this is my first project. I will improve it step by step.</p>
+    <p>
+        I started learning how to build websites and this is my first project.  
+        I will improve step by step and build amazing apps.
+    </p>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+    <h2>My Projects 💼</h2>
+    <p>✔️ SR World Website (Live)</p>
+    <p>🚧 Chat App (Coming Soon)</p>
 </section>
 
 <!-- Photos -->
@@ -150,9 +174,15 @@
     </div>
 </section>
 
+<!-- Footer -->
+<footer>
+    <p>© 2026 Sahil | Built with ❤️</p>
+</footer>
+
+<!-- Script -->
 <script>
-function hello() {
-    alert("Welcome to my website 😎");
+function openChat() {
+    alert("Chat App coming soon 🚀");
 }
 </script>
 
