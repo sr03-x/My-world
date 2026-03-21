@@ -19,24 +19,32 @@
             font-size: 18px;
         }
 
-        .chat-box {
+        #chatBox {
             height: 75vh;
             padding: 10px;
             overflow-y: auto;
         }
 
         .message {
-            background: white;
             padding: 10px 15px;
             margin: 10px;
             border-radius: 10px;
             width: fit-content;
             max-width: 70%;
+            position: relative;
+            font-size: 14px;
         }
 
         .sent {
             background: #dcf8c6;
             margin-left: auto;
+        }
+
+        .time {
+            font-size: 10px;
+            color: gray;
+            text-align: right;
+            margin-top: 3px;
         }
 
         .input-area {
@@ -53,6 +61,7 @@
             padding: 15px;
             border: none;
             outline: none;
+            font-size: 14px;
         }
 
         button {
@@ -61,17 +70,16 @@
             padding: 15px;
             color: white;
             cursor: pointer;
+            font-size: 14px;
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    Chat App 💬
-</header>
+<header>Chat App 💬</header>
 
-<div class="chat-box" id="chatBox"></div>
+<div id="chatBox"></div>
 
 <div class="input-area">
     <input type="text" id="msg" placeholder="Type message...">
@@ -82,17 +90,44 @@
 function sendMessage() {
     let input = document.getElementById("msg");
     let chatBox = document.getElementById("chatBox");
+    let text = input.value.trim();
 
-    if(input.value !== "") {
-        let div = document.createElement("div");
-        div.className = "message sent";
-        div.innerText = input.value;
+    if (text === "") return;
 
-        chatBox.appendChild(div);
-        input.value = "";
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }
+    // create message
+    let div = document.createElement("div");
+    div.className = "message sent";
+
+    // message text
+    let msgText = document.createElement("div");
+    msgText.innerText = text;
+
+    // time
+    let time = document.createElement("div");
+    time.className = "time";
+
+    let now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes().toString().padStart(2, '0');
+
+    time.innerText = hours + ":" + minutes;
+
+    // append
+    div.appendChild(msgText);
+    div.appendChild(time);
+
+    chatBox.appendChild(div);
+
+    input.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+// Enter key support
+document.getElementById("msg").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        sendMessage();
+    }
+});
 </script>
 
 </body>
